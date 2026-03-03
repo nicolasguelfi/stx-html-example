@@ -1,6 +1,6 @@
 import streamlit as st 
 import setup
-from streamtex import st_book, TOCConfig
+from streamtex import st_book, TOCConfig, NumberingMode
 import blocks
 from custom.styles import Styles as s
 from custom.themes import dark
@@ -9,13 +9,13 @@ import streamtex.styles as sts
 st.set_page_config(page_title="HTML Migration Example",
                     page_icon=None,
                     layout="wide",
-                    initial_sidebar_state="collapsed",
+                    initial_sidebar_state="expanded",
                     menu_items=None)
 
 st.sidebar.title("Table of Contents")
 
 toc = TOCConfig(
-    numerate_titles=False,
+    numbering=NumberingMode.SIDEBAR_ONLY,
     toc_position=0,
     title_style=s.project.titles.table_of_contents,
     sidebar_max_level=2,
